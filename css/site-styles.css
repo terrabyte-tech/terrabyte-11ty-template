@@ -1,5 +1,11 @@
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 
+/* css variables */
+:root{
+  --background: #ffffff;
+  --foreground: #333333;
+}
+
 /* layout */
 
 /* responsive */

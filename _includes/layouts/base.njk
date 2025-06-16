@@ -20,6 +20,9 @@
   <meta name="author" content="{{ site.author }}">
   <meta name="keywords" content="{{ keywords }}">
 
+  {# if applicable/desired #}
+  <meta name="theme-color" content="#0A8C61">
+
   {# Open Graph meta tags #}
   <meta property="og:title" content="{{ site.title }}{% if subtitle %}: {{ subtitle }}{% endif %}">
   <meta property="og:type" content="website">
@@ -50,8 +53,7 @@
   <!-- frameworks -->
   <link rel="stylesheet" type="text/css" src="https://au.goldenharpmedia.com/packages/1.0/au.css">
   <!-- shared Terrabyte styles -->
-  {# currently does not exist; doesn't seem needed as all products have different styles #}
-  {# <link rel="stylesheet" href="https://terrabyte.eco/css/shared-styles.css"> #}
+  <link rel="stylesheet" href="https://terrabyte.eco/css/shared-org-styles.css">
   {# should not be used; leverage aurum framework #}
   {# <link rel="stylesheet" href="https://terrabyte.eco/css/layout-styles.css"> #}
 
@@ -90,6 +92,14 @@
 
 </head>
 <body>
+  {# svg container component #}
+  {% include "svgs.njk" %}
+
+  {# noscript banner component #}
+  {% include "noscript-banner.njk" %}
+
+  <a name="top"></a>
+
   {% include "header.njk" %}
   {# <header> #}
     <h1>{{ title }}</h1>
