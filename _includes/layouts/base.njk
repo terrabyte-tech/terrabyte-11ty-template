@@ -14,28 +14,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ site.title }}
-    {% if subtitle %}
-      : {{ subtitle }}
-    {% endif %}
-  </title>
+  <title>{{ site.title }}{% if subtitle %}: {{ subtitle }}{% endif %}</title>
 
   <meta name="description" content="{{ site.description }}">
   <meta name="author" content="{{ site.author }}">
   <meta name="keywords" content="{{ keywords }}">
 
   {# Open Graph meta tags #}
-  <meta property="og:title" content="{{ site.title }}
-    {% if subtitle %}
-      : {{ subtitle }}
-    {% endif %}">
+  <meta property="og:title" content="{{ site.title }}{% if subtitle %}: {{ subtitle }}{% endif %}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}">
-  <meta property="og:description" content="{% if subdescription %}
-      {{ subdescription }}
-    {% else %}
-      {{ site.description }}
-    {% endif %}">
+  <meta property="og:description" content="{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="img/meta/og-image.png">
 
   {# Favicon links #}
@@ -58,10 +47,17 @@
   {# <script src="https://unpkg.com/phosphor-icons"></script> #}
 
   <!-- stylesheets -->
+  <!-- frameworks -->
+  <link rel="stylesheet" type="text/css" src="https://au.goldenharpmedia.com/packages/1.0/au.css">
   <!-- shared Terrabyte styles -->
+  {# currently does not exist; doesn't seem needed as all products have different styles #}
+  {# <link rel="stylesheet" href="https://terrabyte.eco/css/shared-styles.css"> #}
+  {# should not be used; leverage aurum framework #}
   {# <link rel="stylesheet" href="https://terrabyte.eco/css/layout-styles.css"> #}
 
   <!-- shared project styles -->
+  <!-- shared pixel site styles (if applicable) -->
+  {# <link rel="stylesheet" href="https://terrabyte.eco/css/shared-pixel-styles.css"> #}
   {# <link rel="stylesheet" href="https://app.canapi.io/css/shared-styles.css"> #}
 
   <!-- site styles -->
@@ -84,6 +80,13 @@
   <!-- site scripts -->
   {# <script src="./js/scripts.js"></script>
   <script src="./canapi.js"></script> #}
+
+<!--------->
+<!-- analytics -->
+<!--------->
+
+  <!-- microanalytics -->
+  <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
 
 </head>
 <body>
