@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
 
+{% include "inspector-splash.njk" %}
+
 <!--------->
 <!-- metadata -->
 <!--------->
 
-  <!-- no index variable -->
+  <!-- index -->
+  {# add variable to nunjucks templates that shouldn't be indexed in frontmatter #}
   {% if noIndex %}
     <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
   {% endif %}
@@ -20,7 +23,7 @@
   <meta name="author" content="{{ site.author }}">
   <meta name="keywords" content="{{ keywords }}">
 
-  {# if applicable/desired #}
+  {# if applicable/desired (default: TB green) #}
   <meta name="theme-color" content="#0A8C61">
 
   {# Open Graph meta tags #}
@@ -30,12 +33,11 @@
   <meta property="og:description" content="{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="img/meta/og-image.png">
 
-  {# Favicon links #}
+  {# favicons #}
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-
 
 <!--------->
 <!-- css -->
@@ -51,11 +53,9 @@
 
   <!-- frameworks -->
   <link rel="stylesheet" type="text/css" href="https://au.goldenharpmedia.com/framework/packages/v1.0/au.css">
+
   <!-- shared Terrabyte styles -->
   <link rel="stylesheet" href="https://terrabyte.eco/css/shared-org-styles.css">
-
-  {# should not be used; leverage aurum framework #}
-  {# <link rel="stylesheet" href="https://terrabyte.eco/css/layout-styles.css"> #}
 
   <!-- shared pixel site styles (if applicable) -->
   {# <link rel="stylesheet" href="https://terrabyte.eco/css/shared-pixel-styles.css"> #}
@@ -82,7 +82,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Thing",
-      "name": "{{ site.name }}",
+      "name": "{{ site.project }}",
       "url": "{{ site.url }}",
       "logo": "https://THISDOMAIN.com/logo.png",
       "description": "{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}"
@@ -105,24 +105,32 @@
   <!-- canapi -->
   <!-- <script type="text/javascript" data-canapi-init data-host="https://app.canapi.io" src="https://app.canapi.io/canapi.js" defer></script> -->
 
-
 </head>
 <body>
+
+{# ########## #}
+{# dependencies #}
+{# ########## #}
+
   {# svg container component #}
   {% include "svgs.njk" %}
+
+{# ########## #}
+{# sys ui #}
+{# ########## #}
 
   {# accessibility/screen reader TOC component #}
   {% include "sr-toc.njk" %}
 
   {# noscript banner component #}
-  {% include "noscript-banner.njk" %}
+  {% include "banners.njk" %}
+
+{# ########## #}
+{# page begins #}
+{# ########## #}
 
   <a name="top"></a>
-
   {% include "header.njk" %}
-  {# <header> #}
-    <h1>{{ title }}</h1>
-  {# </header> #}
   <main>
     {{ content | safe }}
   </main>
