@@ -2,6 +2,8 @@ module.exports = function (eleventyConfig) {
   // copy site data
   eleventyConfig.addPassthroughCopy('htaccess.txt');
   eleventyConfig.addPassthroughCopy('.htaccess');
+  eleventyConfig.addPassthroughCopy('robots.txt');
+  eleventyConfig.addPassthroughCopy('sitemap.xml');
   // copy directories to the output
   eleventyConfig.addPassthroughCopy('css');
   eleventyConfig.addPassthroughCopy('js');

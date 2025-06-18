@@ -16,7 +16,7 @@
 
   <title>{{ site.title }}{% if subtitle %}: {{ subtitle }}{% endif %}</title>
 
-  <meta name="description" content="{{ site.description }}">
+  <meta name="description" content="{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}">
   <meta name="author" content="{{ site.author }}">
   <meta name="keywords" content="{{ keywords }}">
 
@@ -49,7 +49,6 @@
   <!-- icons -->
   {# <script src="https://unpkg.com/phosphor-icons"></script> #}
 
-  <!-- stylesheets -->
   <!-- frameworks -->
   <link rel="stylesheet" type="text/css" href="https://au.goldenharpmedia.com/framework/packages/v1.0/au.css">
   <!-- shared Terrabyte styles -->
@@ -78,6 +77,18 @@
 <!-- js -->
 <!--------->
 
+  <!-- schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Thing",
+      "name": "{{ site.name }}",
+      "url": "{{ site.url }}",
+      "logo": "https://THISDOMAIN.com/logo.png",
+      "description": "{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}"
+    }
+  </script>
+
   <!-- shared Terrabyte scripts -->
   <script src="https://terrabyte.eco/js/shared-scripts.js"></script>
 
@@ -85,10 +96,15 @@
   <script src="./js/scripts.js"></script>
 
 <!--------->
-<!-- analytics -->
+<!-- analytics & APIs -->
 <!--------->
+
   <!-- microanalytics -->
   <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
+
+  <!-- canapi -->
+  <!-- <script type="text/javascript" data-canapi-init data-host="https://app.canapi.io" src="https://app.canapi.io/canapi.js" defer></script> -->
+
 
 </head>
 <body>
