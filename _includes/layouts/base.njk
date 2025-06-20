@@ -93,7 +93,7 @@
   <script src="https://terrabyte.eco/js/shared-scripts.js"></script>
 
   <!-- site scripts -->
-  <script src="./js/scripts.js"></script>
+  <script src="./js/scripts.js" data-site-title"{{ site.title }}"></script>
 
 <!--------->
 <!-- analytics & APIs -->
@@ -118,6 +118,9 @@
 {# ########## #}
 {# sys ui #}
 {# ########## #}
+
+  {# modals (not supported atm...) #}
+  {# {% include "modals.njk" %} #}
 
   {# accessibility/screen reader TOC component #}
   {% include "sr-toc.njk" %}
