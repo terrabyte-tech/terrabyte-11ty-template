@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('site.webmanifest');
 
 
+  // page transforms
   // create accessibility table of contents
   eleventyConfig.addTransform("injectSrToc", function(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
