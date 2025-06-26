@@ -1,3 +1,5 @@
+const cheerio = require("cheerio");
+
 module.exports = function (eleventyConfig) {
   // copy site data
   eleventyConfig.addPassthroughCopy('htaccess.txt');
@@ -19,5 +21,38 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('img');
   eleventyConfig.addWatchTarget('cards');
   eleventyConfig.addWatchTarget('site.webmanifest');
+
+
+  // create accessibility table of contents
+  eleventyConfig.addTransform("injectSrToc", function(content, outputPath) {
+    if (outputPath && outputPath.endsWith(".html")) {
+      const $ = cheerio.load(content);
+
+      // Build TOC from sections
+      const sections = [];
+      $("section[id]").each((i, elem) => {
+        const id = $(elem).attr("id");
+        const title = id + " section";
+        sections.push({ id, title });
+      });
+
+      // Only inject if there are sections
+      if (sections.length) {
+        const tocHtml = `
+<nav class="sr-only sr-toc" aria-label="Table of Contents" role="navigation">
+  <h2>Page Table of Contents</h2>
+  <ul>
+    <li><a class="text-link" href="#top">Jump to top</a></li>
+    ${sections.map(s => `<li><a href="#${s.id}" class="text-link" tabindex="0">${s.title}</a></li>`).join("\n")}
+  </ul>
+</nav>
+        `;
+        // Insert TOC at the start of <body> on the page
+        $("body").prepend(tocHtml);
+        return $.html();
+      }
+    }
+    return content;
+  });
 
 };

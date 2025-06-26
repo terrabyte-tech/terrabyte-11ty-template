@@ -93,7 +93,7 @@
   <script src="https://terrabyte.eco/js/shared-scripts.js"></script>
 
   <!-- site scripts -->
-  <script src="./js/scripts.js" data-site-title"{{ site.title }}"></script>
+  <script src="./js/scripts.js"></script>
 
 <!--------->
 <!-- analytics & APIs -->
@@ -123,7 +123,9 @@
   {# {% include "modals.njk" %} #}
 
   {# accessibility/screen reader TOC component #}
-  {% include "sr-toc.njk" %}
+  {# {% set pageContent = content %} #}
+  {# {% include "sr-toc.njk" %} #}
+  {# now handled in .eleventy.js transform #}
 
   {# noscript banner component #}
   {% include "banners.njk" %}
