@@ -8,6 +8,11 @@
 <!-- metadata -->
 <!--------->
 
+  <!-- dump site data to DOM -->
+  <script>
+    window.siteData = {{ site | dump | safe }};
+  </script>
+
   <!-- index -->
   {# add variable to nunjucks templates that shouldn't be indexed in frontmatter #}
   {% if noIndex %}
@@ -24,7 +29,9 @@
   <meta name="keywords" content="{{ keywords }}">
 
   {# if applicable/desired (default: TB green) #}
-  <meta name="theme-color" content="#0A8C61">
+  <meta name="theme-color" content="{{ site.accentColor | default('#0A8C61') }}">
+
+  {# Open Graph meta tags for social media sharing #}
 
   {# Open Graph meta tags #}
   <meta property="og:title" content="{{ site.title }}{% if subtitle %}: {{ subtitle }}{% endif %}">
@@ -64,7 +71,7 @@
   {# <link rel="stylesheet" href="https://canapi.io/css/shared-styles.css"> #}
 
   <!-- site styles -->
-  <link rel="stylesheet" href="./css/site-styles.css">
+  <link rel="stylesheet" href="/css/site-styles.css">
 
   {# conditional styles #}
   {% if testPage %}
@@ -93,7 +100,7 @@
   <script src="https://terrabyte.eco/js/shared-scripts.js"></script>
 
   <!-- site scripts -->
-  <script src="./js/scripts.js"></script>
+  <script src="/js/scripts.js"></script>
 
 <!--------->
 <!-- analytics & APIs -->
