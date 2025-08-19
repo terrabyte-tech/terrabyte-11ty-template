@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 module.exports = function (eleventyConfig) {
   // copy site data
   // eleventyConfig.addPassthroughCopy('htaccess.txt');
-  eleventyConfig.addPassthroughCopy('.htaccess');
+  // eleventyConfig.addPassthroughCopy('.htaccess');
   // eleventyConfig.addPassthroughCopy('robots.txt');
   // eleventyConfig.addPassthroughCopy('sitemap.xml');
   // copy directories to the output
@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('js');
   eleventyConfig.addPassthroughCopy('img');
   // copy favicons
-  eleventyConfig.addPassthroughCopy('site.webmanifest');
+  // eleventyConfig.addPassthroughCopy('site.webmanifest');
   eleventyConfig.addPassthroughCopy('*.ico');
   eleventyConfig.addPassthroughCopy('*.png');
 
@@ -19,8 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('css');
   eleventyConfig.addWatchTarget('js');
   eleventyConfig.addWatchTarget('img');
-  eleventyConfig.addWatchTarget('cards');
-  eleventyConfig.addWatchTarget('site.webmanifest');
+  // eleventyConfig.addWatchTarget('site.webmanifest');
 
 
   // page transforms and filters

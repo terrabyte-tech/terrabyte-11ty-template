@@ -5,5 +5,7 @@
   "author": "Terrabyte",
   "language": "en-US",
   "description": "Terrabyte is green tech company based in Omaha, NE.",
-  "accentColor": "#0A8C61"
+  "accentColor": "#0A8C61",
+  "backgroundColor": "#333333",
+  "foregroundColor": "#ffffff"
 }
