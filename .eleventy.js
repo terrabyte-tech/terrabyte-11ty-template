@@ -2,10 +2,10 @@ const cheerio = require("cheerio");
 
 module.exports = function (eleventyConfig) {
   // copy site data
-  eleventyConfig.addPassthroughCopy('htaccess.txt');
+  // eleventyConfig.addPassthroughCopy('htaccess.txt');
   eleventyConfig.addPassthroughCopy('.htaccess');
-  eleventyConfig.addPassthroughCopy('robots.txt');
-  eleventyConfig.addPassthroughCopy('sitemap.xml');
+  // eleventyConfig.addPassthroughCopy('robots.txt');
+  // eleventyConfig.addPassthroughCopy('sitemap.xml');
   // copy directories to the output
   eleventyConfig.addPassthroughCopy('css');
   eleventyConfig.addPassthroughCopy('js');
@@ -23,8 +23,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('site.webmanifest');
 
 
-  // page transforms
-  // create accessibility table of contents
+  // page transforms and filters
+
+  // FILTER: split a string by a separator
+  eleventyConfig.addFilter("split", function(str, separator) {
+    if (!str) return [];
+    return str.split(separator);
+  });
+
+  // TRANSFORM: create accessibility table of contents
   eleventyConfig.addTransform("injectSrToc", function(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
       const $ = cheerio.load(content);
