@@ -91,7 +91,8 @@
       "@type": "Thing",
       "name": "{{ site.project }}",
       "url": "{{ site.url }}",
-      "logo": "https://THISDOMAIN.com/logo.png",
+      "logo": "{{ site.url }}/img/meta/logo.png",
+      "sameAs": ["https://instagram.com/terrabyte_tech", "https://mastodon.eco/@terrabyte", "https://app.wedonthavetime.org/profile/Terrabyte", "https://www.linkedin.com/company/terrabyte-tech/", "https://www.youtube.com/@TerrabyteEco", "https://profiles.eco/terrabyte", "https://github.com/terrabyte-tech", "https://patreon.com/terrabyte_tech"],
       "description": "{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}"
     }
   </script>
