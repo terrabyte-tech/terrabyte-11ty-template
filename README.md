@@ -51,6 +51,7 @@ From here, you should be able to copy the content within this template project i
 
 Caveats that _should not_ be copied include:
 
+- `.git`: This is THIS project's git history - you'll make your own in your new project.
 - `_site`: This is the web-ready content rendered by the 11ty build process. It will be rendered in your new project as well.
 - `node_modules`: This is a folder containing node-specific files. These won't be committed in GitHub nor should they be copied from project to project (use npm for this).
 - `package.json` and `package-lock.json`: You just changed the `package.json` file, no need to overwrite it!
