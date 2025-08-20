@@ -57,3 +57,30 @@ Caveats that _should not_ be copied include:
 - `package.json` and `package-lock.json`: You just changed the `package.json` file, no need to overwrite it!
 - `README.md`: Your new project requires it's own README :)
 
+### 5. Install dependencies
+
+Before building the project again, you will need to install dependencies referenced in the template project. This includes:
+
+#### Cheerio
+
+Cheerio is used to create accessibility table of contents per-page. To install the dependency, run the following command.
+
+```
+npm install cheerio
+```
+
+### 6. BUILD!
+
+At this point, you should be ready to build your website as you intend. Whether you are dropping in content from an old project (converting to 11ty) or starting fresh, don't forget to:
+
+Run the build process after making changes to `.eleventy.js` or other build files.
+
+```
+npm run build
+```
+
+And run the local server in order to preview changes as you make them to site files.
+
+```
+npx @11ty/eleventy --serve
+```
