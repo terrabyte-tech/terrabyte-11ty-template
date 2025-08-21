@@ -1,4 +1,5 @@
 const cheerio = require("cheerio");
+const site = require("./_data/site.json");
 
 module.exports = function (eleventyConfig) {
   // copy site data
@@ -28,6 +29,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("split", function(str, separator) {
     if (!str) return [];
     return str.split(separator);
+  });
+
+  // FILTER: Generate canonical URL
+  eleventyConfig.addFilter("canonicalUrl", function(pageUrl) {
+    // Remove trailing slash from site.url (if present, though it shouldn't be)
+    const base = site.url.replace(/\/$/, "");
+
+    // check if it's the homepage; if so, just return the base URL
+    if (!pageUrl || pageUrl === "/" || pageUrl === "/index.html") {
+      return base;
+    }
+    
+    // otherwise, ensure pageUrl starts with a slash
+    const rel = pageUrl.startsWith("/") ? pageUrl : `/${pageUrl}`;
+    return base + rel;
   });
 
   // TRANSFORM: create accessibility table of contents
