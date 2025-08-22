@@ -1,18 +1,48 @@
 /* +++++++++++++++++++++++++++++++++++++++++++ */
-
 /* css variables */
 :root{
-  --background: #ffffff;
-  --HCbackground: #ffffff;
-  --foreground: #333333;
-  --HCforeground: #000000;
+  --white: #ffffff;
+  /* --HCbackground: #ffffff; */
+  --dark: #333333;
+  --black: #000000;
   --accent: #0A8C61;
-  --HCaccent: #096242;
+  /* --HCaccent: #096242; */
+  --projectLogo: url("/img/project-logo.png");
 }
+
+/* variables for dark/light mode */
+[data-theme~="dark"]{
+  --background: var(--dark);
+  --foreground: var(--white);
+}
+[data-theme~="light"]{
+  --background: var(--white);
+  --foreground: var(--dark);
+}
+/* variables for high contrast */
+[data-theme~="dark"][data-theme~="hc"]{
+  --background: var(--black);
+  --foreground: var(--white);
+}
+[data-theme~="light"][data-theme~="hc"]{
+  --background: var(--white);
+  --foreground: var(--black);
+}
+
+/* variables for website body */
+body{
+  background-color: var(--background);
+  color: var(--foreground);
+}
+/* +++++++++++++++++++++++++++++++++++++++++++ */
+
 
 /* layout */
 
 /* other elements */
+.project-logo{
+  background-image:var(--projectLogo);
+}
 
 /* responsive */
 @media only screen and (max-width: 600px){
