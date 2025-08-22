@@ -64,11 +64,11 @@
   <link rel="stylesheet" type="text/css" href="https://au.goldenharpmedia.com/framework/packages/v1.0/au.css">
 
   <!-- shared Terrabyte styles -->
-  <link rel="stylesheet" href="https://terrabyte.eco/css/shared-org-styles.css">
+  <link rel="stylesheet" href="https://www.terrabyte.eco/css/shared-org-styles.css">
 
   <!-- shared pixel site styles (if applicable) -->
   {% if site.styleType == "pixel" %}
-    <link rel="stylesheet" href="https://terrabyte.eco/css/shared-pixel-styles.css">
+    <link rel="stylesheet" href="https://www.terrabyte.eco/css/shared-pixel-styles.css">
   {% endif %}
 
   <!-- shared project styles -->
@@ -110,7 +110,7 @@
   </script>
 
   <!-- shared Terrabyte scripts -->
-  <script src="https://terrabyte.eco/js/shared-scripts.js"></script>
+  <script src="https://www.terrabyte.eco/js/shared-scripts.js"></script>
 
   <!-- site scripts -->
   <script src="/js/scripts.js"></script>
@@ -162,6 +162,8 @@
   <a name="footer"></a>
   {% if site.styleType == "pixel" %}
     {% include "pixel-footer.njk" %}
+  {% else %}
+    {% include "footer.njk" %}
   {% endif %}
 </body>
 </html>
