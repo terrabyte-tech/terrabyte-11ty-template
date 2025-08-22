@@ -60,7 +60,7 @@ module.exports = function (eleventyConfig) {
 <nav class="sr-only sr-toc" aria-label="Table of Contents" role="navigation">
   <h2>Page Table of Contents</h2>
   <ul>
-    <li><a class="text-link" href="#top">Jump to top</a></li>
+    <li><a class="text-link" href="#top">Jump to content</a></li>
     ${sections.map(s => `<li><a href="#${s.id}" class="text-link" tabindex="0">${s.title}</a></li>`).join("\n")}
   </ul>
 </nav>
