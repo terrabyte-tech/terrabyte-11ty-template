@@ -3,10 +3,7 @@ const site = require("./_data/site.json");
 
 module.exports = function (eleventyConfig) {
   // copy site data
-  // eleventyConfig.addPassthroughCopy('htaccess.txt');
   // eleventyConfig.addPassthroughCopy('.htaccess');
-  // eleventyConfig.addPassthroughCopy('robots.txt');
-  // eleventyConfig.addPassthroughCopy('sitemap.xml');
   // copy directories to the output
   eleventyConfig.addPassthroughCopy('css');
   eleventyConfig.addPassthroughCopy('js');
@@ -20,8 +17,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('css');
   eleventyConfig.addWatchTarget('js');
   eleventyConfig.addWatchTarget('img');
-  // eleventyConfig.addWatchTarget('site.webmanifest');
-
 
   // page transforms and filters
 
