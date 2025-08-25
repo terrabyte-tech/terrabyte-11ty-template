@@ -65,10 +65,12 @@
 
   <!-- shared Terrabyte styles -->
   <link rel="stylesheet" href="https://www.terrabyte.eco/css/shared-org-styles.css">
+  {# <link rel="stylesheet" href="./css/shared-org-styles.css"> #}
 
   <!-- shared pixel site styles (if applicable) -->
   {% if site.styleType == "pixel" %}
     <link rel="stylesheet" href="https://www.terrabyte.eco/css/shared-pixel-styles.css">
+    {# <link rel="stylesheet" href="./css/shared-pixel-styles.css"> #}
   {% endif %}
 
   <!-- shared project styles -->
@@ -153,7 +155,11 @@
 {# ########## #}
 
   <a name="top"></a>
-  {% include "header.njk" %}
+  {% if site.project == "Pixel Planet Today" %}
+    {% include "ppt-header.njk" %}
+  {% else %}
+    {# {% include "header.njk" %} #}
+  {% endif %}
 
   <main>
     {{ content | safe }}
