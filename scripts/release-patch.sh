@@ -10,7 +10,4 @@ npm run sync-version
 git add _data/site.json
 git commit -m "chore: sync site.json with package version"
 
-# Push commit and tag
-git push && git push --tags
-
-echo "Template version bumped and synced; ready to release!"
+echo "Template version bumped and synced; ready to push release!"
