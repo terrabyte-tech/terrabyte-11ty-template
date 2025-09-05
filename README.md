@@ -8,7 +8,17 @@ Below, follow the process that works best for your project. It's preferred to cr
 
 ## Checkout/Subtree Process
 
-[steps have yet to be documented...]
+[steps have yet to be documented in detail...]
+
+### How to Use
+- Pull via subtree or install via NPM (coming soon)
+- Override layouts by extending `base.njk`
+- Use `site.json` to control fonts, pixel styles, and theme color
+
+### Version History
+- v1.0: Initial release
+- v1.1: Added styleType logic, fontFamily support
+
 
 ## Manual Copy/Paste Process
 
