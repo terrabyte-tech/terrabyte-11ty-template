@@ -73,7 +73,7 @@
     {# <link rel="stylesheet" href="./css/shared-pixel-styles.css"> #}
   {% endif %}
 
-  <!-- shared project styles -->
+  <!-- shared project styles for {{ site.project }}; if applicable -->
   {# <link rel="stylesheet" href="https://canapi.io/css/shared-styles.css"> #}
 
   <!-- site styles -->
@@ -101,13 +101,7 @@
       "description": "{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}"
     }
     {# {
-      "@context": "https://schema.org",
-      "@type": "{{ site.schemaType | default('Thing') }}",
-      "name": "{{ site.project }}",
-      "url": "{{ site.url }}",
-      "logo": "{{ site.url }}/img/meta/logo.png",
-      "sameAs": ["https://instagram.com/terrabyte_tech", "https://mastodon.eco/@terrabyte", "https://app.wedonthavetime.org/profile/Terrabyte", "https://www.linkedin.com/company/terrabyte-tech/", "https://www.youtube.com/@TerrabyteEco", "https://profiles.eco/terrabyte", "https://github.com/terrabyte-tech", "https://patreon.com/terrabyte_tech"],
-      "description": "{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}"
+      "sameAs": ["https://instagram.com/terrabyte_tech", "https://mastodon.eco/@terrabyte", "https://app.wedonthavetime.org/profile/Terrabyte", "https://www.linkedin.com/company/terrabyte-tech/", "https://www.youtube.com/@TerrabyteEco", "https://profiles.eco/terrabyte", "https://github.com/terrabyte-tech", "https://patreon.com/terrabyte_tech"]
     } #}
   </script>
 
@@ -115,7 +109,7 @@
   <script src="https://www.terrabyte.eco/js/shared-scripts.js"></script>
 
   <!-- site scripts -->
-  <script src="/js/scripts.js"></script>
+  <script src="/js/scripts.js" async defer></script>
 
 <!--------->
 <!-- analytics & APIs -->
