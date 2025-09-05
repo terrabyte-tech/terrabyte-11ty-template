@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// Paths to your files
+// Paths to files
 const packagePath = path.resolve(__dirname, '../package.json');
 const sitePath = path.resolve(__dirname, '../_data/site.json');
 
