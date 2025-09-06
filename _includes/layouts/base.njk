@@ -8,13 +8,13 @@
 <!-- metadata -->
 <!--------->
 
-  <!-- dump site data to DOM -->
+  <!-- site data now usable to DOM -->
   <script>
     window.siteData = {{ site | dump | safe }};
   </script>
 
-  <!-- index -->
-  {# add variable to nunjucks templates that shouldn't be indexed in frontmatter #}
+  <!-- index? -->
+  {# add variable to nunjucks templates that shouldn't be indexed in frontmatter; noIndex: true #}
   {% if noIndex %}
     <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
   {% endif %}
@@ -58,7 +58,9 @@
   <link href="{{ site.fontsRel }}" rel="stylesheet">
 
   <!-- icons -->
-  <script src="{{ site.iconsRel }}"></script>
+  {% if site.iconsRel %}
+    <script src="{{ site.iconsRel }}"></script>
+  {% endif %}
 
   <!-- frameworks -->
   <link rel="stylesheet" type="text/css" href="https://au.goldenharpmedia.com/framework/packages/v1.0/au.css">
@@ -67,8 +69,8 @@
   <link rel="stylesheet" href="https://www.terrabyte.eco/css/shared-org-styles.css">
   {# <link rel="stylesheet" href="./css/shared-org-styles.css"> #}
 
-  <!-- shared pixel site styles (if applicable) -->
   {% if site.styleType == "pixel" %}
+    <!-- shared pixel site styles -->
     <link rel="stylesheet" href="https://www.terrabyte.eco/css/shared-pixel-styles.css">
     {# <link rel="stylesheet" href="./css/shared-pixel-styles.css"> #}
   {% endif %}
@@ -119,7 +121,10 @@
   <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
 
   <!-- canapi -->
-  <!-- <script type="text/javascript" data-canapi-init data-host="https://app.canapi.io" src="https://app.canapi.io/canapi.js" defer></script> -->
+  {% if site.canapiKey %}
+    <script type="text/javascript" data-canapi-init data-host="https://app.canapi.io" src="https://app.canapi.io/canapi.js" defer></script>
+  {% endif %}
+  
 
 </head>
 <body data-theme="dark">
@@ -152,7 +157,7 @@
   {% if site.project == "Pixel Planet Today" %}
     {% include "ppt-header.njk" %}
   {% else %}
-    {# {% include "header.njk" %} #}
+    {% include "header.njk" %}
   {% endif %}
 
   <main>

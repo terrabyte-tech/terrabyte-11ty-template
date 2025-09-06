@@ -16,7 +16,7 @@ First, bring this template into your project by creating a subtree. We recommend
 
 If you are starting a new project, you can copy all of the content from the template into the root. If you already have content, be sure to carefully diff as you could accidently overwrite your content.
 
-Use `site.json` to control fonts, pixel styles, and theme color.
+Use `site.json` to control fonts, pixel styles, and theme color. For a detailed set of data that can be in this file, see [/docs/site.bak.json](/docs/site.bak.json).
 
 ### Version History
 - v1.0: Initial release
