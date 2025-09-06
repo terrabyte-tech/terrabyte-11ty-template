@@ -1,6 +1,6 @@
 # Terrabyte 11ty Template
 
-The purpose of this project is to make it easy to get started when building a Terrabyte website using 11ty. [11ty](https://www.11ty.dev/) is a static-site generator that makes the website build process more efficient while leveraging components. For more information on using 11ty, please visit their [docs](https://www.11ty.dev/docs/).
+The purpose of this project is to make it easy to get started with a new Terrabyte website and managing its updates. [11ty](https://www.11ty.dev/) is a static-site generator that makes the website build process more efficient while leveraging components, build processes, and other dev capabilities. For more information on using 11ty, please visit their [docs](https://www.11ty.dev/docs/).
 
 Below, follow the process that works best for your project. It's preferred to create a subtree of this repository in order to track changes to the template, but in outlying circumstances, you may need to manually copy/paste this template into your project.
 
@@ -8,15 +8,23 @@ Below, follow the process that works best for your project. It's preferred to cr
 
 ## Checkout/Subtree Process
 
-[steps have yet to be documented in detail...]
+### Steps
 
-### How to Use
+First, bring this template into your project by creating a subtree at `/template`. We recommend bringing the files here to make file diffs more accomplishable later.
 
-First, bring this template into your project by creating a subtree. We recommend bringing the files into a /template folder to manage file diffs later.
+```
+$ git update template
+$ git subtree ___
+```
 
-If you are starting a new project, you can copy all of the content from the template into the root. If you already have content, be sure to carefully diff as you could accidently overwrite your content.
+If you are starting a new project, you can copy all of the content from the template into the root. If some content already exists, carefully diff  as you could accidently overwrite existing content.
 
-Use `site.json` to control fonts, pixel styles, and theme color. For a detailed set of data that can be in this file, see [/_data/site.bak.jsonc](/_data/site.bak.jsonc).
+
+```
+npm run build
+```
+
+Use `site.json` to control fonts, pixel styles, and theme color. For a detailed set of data that can be in this file, see [/_data/site.bak.jsonc](./_data/site.bak.jsonc).
 
 ### Version History
 - v1.0: Initial release
