@@ -11,9 +11,12 @@ Below, follow the process that works best for your project. It's preferred to cr
 [steps have yet to be documented in detail...]
 
 ### How to Use
-- Pull via subtree or install via NPM (coming soon)
-- Override layouts by extending `base.njk`
-- Use `site.json` to control fonts, pixel styles, and theme color
+
+First, bring this template into your project by creating a subtree. We recommend bringing the files into a /template folder to manage file diffs later.
+
+If you are starting a new project, you can copy all of the content from the template into the root. If you already have content, be sure to carefully diff as you could accidently overwrite your content.
+
+Use `site.json` to control fonts, pixel styles, and theme color.
 
 ### Version History
 - v1.0: Initial release
