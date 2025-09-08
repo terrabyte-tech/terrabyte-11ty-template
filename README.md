@@ -1,43 +1,18 @@
 # Terrabyte 11ty Template
 
-The purpose of this project is to make it easy to get started with a new Terrabyte website and managing its updates. [11ty](https://www.11ty.dev/) is a static-site generator that makes the website build process more efficient while leveraging components, build processes, and other dev capabilities. For more information on using 11ty, please visit their [docs](https://www.11ty.dev/docs/).
+The purpose of this project is to standardize the Terrabyte website development and maintenance workflow. [11ty](https://www.11ty.dev/) is a static-site generator that makes the website build process more efficient by leveraging components, site data variables, and other web dev tools. For more information on using 11ty, please read [their documentation](https://www.11ty.dev/docs/).
 
-Below, follow the process that works best for your project. It's preferred to create a subtree of this repository in order to track changes to the template, but in outlying circumstances, you may need to manually copy/paste this template into your project.
+Below, you will find a set of instructions for getting started with 11ty, as well as how to best utilize this template.
 
 **NOTE:** Creating a website with 11ty requires Node.js and npm on your machine.
 
-## Checkout/Subtree Process
+## Project Initialization
 
-### Steps
-
-First, bring this template into your project by creating a subtree at `/template`. We recommend bringing the files here to make file diffs more accomplishable later.
-
-```
-$ git update template
-$ git subtree ___
-```
-
-If you are starting a new project, you can copy all of the content from the template into the root. If some content already exists, carefully diff  as you could accidently overwrite existing content.
-
-
-```
-npm run build
-```
-
-Use `site.json` to control fonts, pixel styles, and theme color. For a detailed set of data that can be in this file, see [/_data/site.bak.jsonc](./_data/site.bak.jsonc).
-
-### Version History
-- v1.0: Initial release
-- v1.1: Added styleType logic, fontFamily support
-
-
-## Manual Copy/Paste Process
-
-DigitalOcean has a great [guide](https://www.digitalocean.com/community/tutorials/how-to-create-and-deploy-your-first-eleventy-website#step-2-choosing-a-templating-language) on building your first 11ty website. This guide will use their steps, but cater the process to building a Terrabyte website using the files included in this repo.
+DigitalOcean has a great [guide](https://www.digitalocean.com/community/tutorials/how-to-create-and-deploy-your-first-eleventy-website#step-2-choosing-a-templating-language) on building your first 11ty website. This guide will use their steps while adapting it to this template.
 
 ### 1. Create repo & checkout
 
-Create a project repository in GitHub as per-norm. Initialize within GitHub by adding a README, and check it out to your local device through the GitHub CLI.
+Create a project repository in GitHub as per-norm. Initialize within GitHub by adding a README, and check it out to your local device through the GitHub CLI (or using terminal commands if you're a nerd ;).
 
 ### 2. Initialize project
 
@@ -53,7 +28,7 @@ npm init -y
 npm install -D @11ty/eleventy
 ```
 
-### 3. package.json
+### 3. (Optional) package.json
 
 In the created `package.json` file, replace the existing `scripts{}` object with the following `scripts{}` object:
 
@@ -66,15 +41,29 @@ In the created `package.json` file, replace the existing `scripts{}` object with
 ...
 ```
 
-After saving the `package.json` file, run the following command to build the project (we'll add the website content in the next step).
+After saving the `package.json` file, run the following command to build the project for the first time.
 
 ```
 npm run build
-```
+``` 
 
-### 4. Drop in content
+## Project Content
 
-From here, you should be able to copy the content within this template project into your new repo.
+Now that the 11ty project bones are in place, it's time to implement this template.
+
+### 1. Create Subtree
+
+By adding this template to a project folder, you are able to bring template updates into your project without disturbing your code additions later (as long as you diff right). We recommend putting the subtree in a root folder, `/template`. 
+
+It's like a boilerplate - but if the boilerplate changes later, you can add those new pieces to projects even if they used the old boilerplate!
+
+First, make sure all changes are committed to your branch. Then, create the subtree:
+
+[directions for creating the subtree here] 
+
+### 2. Incorporate Template
+
+If you are starting a new project, you can simply copy all of the content from the `/template` folder into the root.
 
 Caveats that _should not_ be copied include:
 
@@ -84,7 +73,7 @@ Caveats that _should not_ be copied include:
 - `package.json` and `package-lock.json`: You just changed the `package.json` file, no need to overwrite it!
 - `README.md`: Your new project requires it's own README :)
 
-### 5. Install dependencies
+### 3. Install dependencies
 
 Before building the project again, you will need to install dependencies referenced in the template project. This includes:
 
@@ -94,11 +83,22 @@ Cheerio is used to create accessibility table of contents per-page. To install t
 
 ```
 npm install cheerio
-```
+``` 
 
-### 6. BUILD!
+### 4. Adding project content
 
-At this point, you should be ready to build your website as you intend. Whether you are dropping in content from an old project (converting to 11ty) or starting fresh, don't forget to:
+At this point, you should be ready to build your website as you intend. This can include building components, pages, and other files. 
+
+
+#### `site.json`
+
+This data file should be leveraged for changing site details, information, and other metadata. For a detailed set of data that can be in this file, see [/_data/site.bak.jsonc](./_data/site.bak.jsonc).
+
+## Managing Updates
+
+### General
+
+Whether you are dropping in content from an old project (converting to 11ty) or starting fresh, don't forget to:
 
 Run the build process after making changes to `.eleventy.js` or other build files.
 
@@ -110,4 +110,20 @@ And run the local server in order to preview changes as you make them to site fi
 
 ```
 npx @11ty/eleventy --serve
+``` 
+
+### Update subtree
+
+If you previously setup the /template folder subtree, you can pull the latest template into your project by running the following commands:
+
 ```
+$ git update template
+$ git subtree ____template repo path here____
+```
+
+#### Version History
+
+For more detailed information on releases, please see the Git activity.
+
+- v1.0: Initial release
+- v1.1: Added styleType logic, fontFamily support 
