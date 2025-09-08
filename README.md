@@ -59,7 +59,9 @@ It's like a boilerplate - but if the boilerplate changes later, you can add thos
 
 First, make sure all changes are committed to your branch. Then, create the subtree:
 
-[directions for creating the subtree here] 
+```
+git subtree add --prefix=template https://github.com/terrabyte-tech/terrabyte-11ty-template.git main --squash
+```
 
 ### 2. Incorporate Template
 
@@ -79,7 +81,7 @@ Before building the project again, you will need to install dependencies referen
 
 #### Cheerio
 
-Cheerio is used to create accessibility table of contents per-page. To install the dependency, run the following command.
+Cheerio is used to create accessibility table of contents per-page (via the `.eleventy.js` file). To install the dependency, run the following command.
 
 ```
 npm install cheerio
@@ -114,7 +116,7 @@ npx @11ty/eleventy --serve
 
 ### Update subtree
 
-If you previously setup the /template folder subtree, you can pull the latest template into your project by running the following commands:
+If you previously setup the `/template` folder subtree, you can pull the latest template into your project by running the following commands:
 
 ```
 $ git update template
@@ -123,7 +125,7 @@ $ git subtree ____template repo path here____
 
 #### Version History
 
-For more detailed information on releases, please see the Git activity.
+As the template changes, so does the documented version. In order to manage what version you are on and what the latest is, template version is stored in the `package.json` file here, as well as in `site.json` for projects that leverage it. To get the most out of this template, we suggest keeping an updated subtree. For more detailed information on releases, please see the Git activity.
 
 - v1.0: Initial release
 - v1.1: Added styleType logic, fontFamily support 
