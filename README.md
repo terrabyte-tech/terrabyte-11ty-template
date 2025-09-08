@@ -128,5 +128,6 @@ $ git subtree ____template repo path here____
 
 As the template changes, so does the documented version. In order to manage what version you are on and what the latest is, template version is stored in the `package.json` file here, as well as in `site.json` for projects that leverage it. To get the most out of this template, we suggest keeping an updated subtree. For more detailed information on releases, please see the Git activity.
 
-- v1.0: Initial release
-- v1.1: Added styleType logic, fontFamily support 
+- v1.0.0: Initial release
+- v1.1.x: Added styleType logic, fontFamily support 
+- v1.2.0: Added downstream automation, component utilization, implementation documentation

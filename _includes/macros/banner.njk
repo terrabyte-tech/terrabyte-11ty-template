@@ -1,0 +1,9 @@
+{% macro banner(text, position="top", type="info", role="banner") %}
+  <div
+    class="banner {{ position }} {{ type }}"
+    role="{{ role }}"
+  >
+    <p>{{ text }}</p>
+    <div onClick="parentNode.remove()">Close [X]</div>
+  </div>
+{% endmacro %}
