@@ -28,6 +28,11 @@ jobs:
                 event_type: "template-release",
                 client_payload: { 
                   tag: process.env.GITHUB_REF_NAME,
+                  // ⚠️ IMPORTANT:
+                  // commit_message_suffix is used by downstream update-template.yml
+                  // to append [skip ci] to commits so template-only updates
+                  // do NOT trigger staging or production deploy pipelines.
+                  // Removing this will cause unnecessary CI/CD runs.
                   commit_message_suffix: "[skip ci]"
                 }
               });
