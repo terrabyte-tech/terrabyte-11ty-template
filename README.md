@@ -70,6 +70,7 @@ If you are starting a new project, you can simply copy all of the content from t
 Caveats that _should not_ be copied include:
 
 - `.git`: This is THIS project's git history - you'll make your own in your new project.
+- `.github/workflows/notify-downstream.yml`: This is automation for triggering the update process for projects that use this template. So, let's not create a blackhole by looping through automations that trigger themselves...
 - `_site`: This is the web-ready content rendered by the 11ty build process. It will be rendered in your new project as well.
 - `node_modules`: This is a folder containing node-specific files. These won't be committed in GitHub nor should they be copied from project to project (use npm for this).
 - `package.json` and `package-lock.json`: You just changed the `package.json` file, no need to overwrite it!
@@ -116,7 +117,7 @@ npx @11ty/eleventy --serve
 
 ### Update subtree
 
-If you previously setup the `/template` folder subtree, you can pull the latest template into your project by running the following commands:
+As long as this repo is added to the template's `notify-downstream.yml` file, the template within the `/template` folder should _always_ be synced with the latest release of the template. Otherwise, you can manually update the subtree in the `/template` folder by running the following commands:
 
 ```
 $ git update template

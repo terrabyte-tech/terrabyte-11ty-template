@@ -1,0 +1,34 @@
+name: Notify Downstream Repos
+
+on:
+  release:
+    types: [published] # Runs when a new release is published
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up repo list
+        id: set-repos
+        run: |
+          # Space-separated list of downstream repos in owner/repo format
+          echo "repos=terrabyte-tech/pixel-pegasus terrabyte-tech/another-site terrabyte-tech/yet-another-site" >> $GITHUB_OUTPUT
+
+      - name: Loop through repos and trigger update
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT }}
+          script: |
+            const repos = "${{ steps.set-repos.outputs.repos }}".split(" ");
+            for (const repo of repos) {
+              console.log(`Triggering update for ${repo}...`);
+              await github.rest.repos.createDispatchEvent({
+                owner: repo.split("/")[0],
+                repo: repo.split("/")[1],
+                event_type: "template-release",
+                client_payload: { 
+                  tag: process.env.GITHUB_REF_NAME,
+                  commit_message_suffix: "[skip ci]"
+                }
+              });
+            }

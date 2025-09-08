@@ -1,0 +1,33 @@
+name: Sync Template on Template Release
+
+on:
+  repository_dispatch:
+    types: [template-release] # Triggered remotely from template repo
+
+jobs:
+  update-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Terrabyte Bot"
+          git config --global user.email "bot@terrabyte.tech"
+
+      - name: Pull latest template release
+        run: |
+          git subtree pull \
+            --prefix=template \
+            https://github.com/terrabyte-tech/terrabyte-11ty-template.git \
+            ${{ github.event.client_payload.tag }} \
+            --squash
+
+      - name: Commit & Push changes
+        run: |
+          git add template
+          git commit -m "chore: sync template to release ${{ github.event.client_payload.tag }} ${{ github.event.client_payload.commit_message_suffix }}" || echo "No changes to commit"
+          git push
