@@ -1,12 +1,26 @@
-{# refactor to use macro/banner.njk #}
+{% from 'macros/banner.njk' import banner %}
+
 <div class="banner-container">
   <noscript>
-    <div class="banner top error">
-      <p>It looks like JavaScript is currently disabled for your browser. We recommend enabling JavaScript in order for the site to function as anticipated.</p>
-      <div onClick="parentNode.remove()">Close [X]</div>
-    </div>
+    {{ banner(
+      content="It looks like JavaScript is currently disabled for your browser. We recommend enabling JavaScript in order for the site to function as anticipated.",
+      id="no-js-banner",
+      dismissible=false,
+      timeout=false,
+      position="top",
+      type="warning"
+    ) }}
   </noscript>
 
-    <!--[if IE]><div class="banner top error"><p>It looks like you are using an out-of-date browser. Please use a modern browser for a better browsing experience.</p><div onClick="parentNode.remove()">Close [X]</div></div><![endif]-->
+  <!--[if IE]>
+    {{ banner(
+      content="It looks like you are using an out-of-date browser. Please use a modern browser for a better browsing experience.",
+      id="ie-banner",
+      dismissible=true,
+      timeout=false,
+      position="top",
+      type="error"
+    ) }}
+  <![endif]-->
 
   </div>
