@@ -1,4 +1,4 @@
-# Terrabyte Template Sync System
+# Terrabyte Cross-Project Template Sync System
 
 **Purpose:** Automatically sync updates from the `terrabyte-11ty-template` repo to downstream Terrabyte sites using a GitHub App and secure automation.
 
