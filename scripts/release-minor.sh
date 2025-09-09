@@ -8,6 +8,11 @@ npm run sync-version
 
 # Stage and commit updated site.json
 git add _data/site.json
-git commit -m "chore: sync site.json with package version"
+VERSION=$(node -p "require('./package.json').version")
+git commit -m "chore(release): v$VERSION - sync site.json with package version"
 
-echo "Template version bumped and synced; ready to push release!"
+# Tag the commit with the new version from package.json
+git tag "v$VERSION" -m "$VERSION"
+
+echo "Version bumped to v$VERSION, site.json synced, git tag created."
+echo "Template ready to release!"
