@@ -2,9 +2,19 @@
 
 The purpose of this project is to standardize the Terrabyte website development and maintenance workflow. [11ty](https://www.11ty.dev/) is a static-site generator that makes the website build process more efficient by leveraging components, site data variables, and other web dev tools. For more information on using 11ty, please read [their documentation](https://www.11ty.dev/docs/).
 
-Below, you will find a set of instructions for getting started with 11ty, as well as how to best utilize this template.
+Below, you will find a set of instructions for getting started with 11ty, as well as how to best utilize this template in Terrabyte projects (downstream projects).
 
 **NOTE:** Creating a website with 11ty requires Node.js and npm on your machine.
+
+## Table of Contents
+
+- [Initializing a downstream project](#project-initialization)
+- [Changing downstream project content](#project-content)
+  - [Creating a subtree](#1-create-subtree)
+  - [Incorporating template](#2-incorporate-template)
+  - [Dependencies](#3-install-dependencies)
+  - [Adding downstream project content](#4-adding-project-content)
+- [Managing updates to template](#managing-updates)
 
 ## Project Initialization
 
@@ -130,4 +140,4 @@ As the template changes, so does the documented version. In order to manage what
 
 - v1.0.0: Initial release
 - v1.1.x: Added styleType logic, fontFamily support 
-- v1.2.0: Added downstream automation, component utilization, implementation documentation
+- v1.2.x: Added downstream automation, component utilization, implementation documentation
