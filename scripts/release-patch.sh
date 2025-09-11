@@ -17,7 +17,8 @@ git tag -a "v$VERSION" -m "Release $VERSION"
 
 # Push commit and tag to origin
 git push origin main
-git push origin "v$VERSION"
+git push origin --tags
+# git push origin "v$VERSION"
 
 echo "✅ Version bumped to v$VERSION"
 echo "📦 site.json synced"
