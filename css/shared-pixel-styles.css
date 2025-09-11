@@ -26,7 +26,7 @@ body{
   width:100vw;
   overflow-x:hidden;
   /* cursor: url("../img/ui/arrow-pointer-cursor.png"), default; */
-  cursor: url("/pixel-assets/ui/mini-default-cursor.png"), default;
+  cursor: url("/img/pixel-assets/ui/mini-default-cursor.png"), default;
 }
 /* to hide images that overflow from 100vw */
 .scroll-manager{
@@ -142,7 +142,7 @@ img{
 /* links */
 a{
   /* cursor: url("../img/ui/finger-pointer-cursor.png"), pointer; */
-  cursor: url("/pixel-assets/ui/mini-pointer-cursor.png"), pointer;
+  cursor: url("/img/pixel-assets/ui/mini-pointer-cursor.png"), pointer;
 }
 a.text-link{
 	position:relative;
@@ -201,7 +201,7 @@ input[type="submit"]{
   padding:10px;
   font-size:15px;
   /* cursor: url("../img/ui/finger-pointer-cursor.png"), pointer; */
-  cursor: url("/pixel-assets/ui/mini-pointer-cursor.png"), pointer;
+  cursor: url("/img/pixel-assets/ui/mini-pointer-cursor.png"), pointer;
 }
 
 button:hover,
@@ -233,7 +233,7 @@ button.primary:active,
 
 /* pixel icons */
 .pixel-social-icon{
-  background-image:url("/pixel-assets/icons/social-spritesheet.png");
+  background-image:url("/img/pixel-assets/icons/social-spritesheet.png");
   /* same as generic link */
   background-position:-198px -158px;
   background-size: 600%;
@@ -389,11 +389,11 @@ footer .section-content{
 }
 /* custom sizing for odd-sized logos */
 .footer-logo.ppt-logo{
-  background-image:url('/pixel-assets/pixel-planet-today-white-lettering.png');
+  background-image:url('/img/pixel-assets/pixel-planet-today-white-lettering.png');
   width:150px;
 }
 .footer-logo.tb-logo{
-  background-image:url('/pixel-assets/terrabyte-white-pixel-logo.png');
+  background-image:url('/img/pixel-assets/terrabyte-white-pixel-logo.png');
   width:200px;
 }
 
