@@ -8,7 +8,7 @@ npm version patch --no-git-tag-version
 npm run sync-version
 
 # Stage and commit updated site.json
-git add _data/site.json
+git add package.json package-lock.json _data/site.json
 VERSION=$(node -p "require('./package.json').version")
 git commit -m "chore(release): v$VERSION - sync site.json with package version"
 
