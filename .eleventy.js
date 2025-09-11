@@ -17,8 +17,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('js');
   eleventyConfig.addWatchTarget('img');
 
-  // page transforms and filters
+  // shortcodes
+  eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
 
+  // page transforms and filters
   // FILTER: split a string by a separator
   eleventyConfig.addFilter("split", function(str, separator) {
     if (!str) return [];
