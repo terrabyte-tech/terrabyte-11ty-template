@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Bump version
-npm version patch
+# npm version patch
+npm version patch --no-git-tag-version
 
 # Sync version to site.json
 npm run sync-version
