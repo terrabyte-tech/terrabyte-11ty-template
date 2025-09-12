@@ -1,3 +1,5 @@
+// Careful in template sync, should be site specific
+
 window.addEventListener("load", function(){
 
   console.log(`[${window.siteData.project}] site-scripts.js loaded`);
