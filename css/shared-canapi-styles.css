@@ -52,7 +52,7 @@
   --errorred-light-trans:#e0414120;
   /* fonts */
   --primary-font: 'Manrope', sans-serif;
-  --secondary-font: monospace;
+  --secondary-font: 'Manrope', sans-serif;
 }
 /* dark mode */
 body.dark,
@@ -96,6 +96,9 @@ body::-webkit-scrollbar-track{
   background-color:var(--accent);
   border-radius:10px;
   transition:.15s;
+}
+.page-container{
+    background:linear-gradient(135deg, #C1F0A3,#A0E1BA);
 }
 
 a{
