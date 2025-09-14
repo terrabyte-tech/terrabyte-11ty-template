@@ -59,11 +59,11 @@ npm run build
 
 ## Project Content
 
-Now that the 11ty project bones are in place, it's time to implement the `terrabyte-11ty-starter` (boilerplate) and the `terrabyte-11ty-template` (this template). The two can be distinguished by thinking of the boilerplate as a launch point, and the template as shared UI/Component pieces.
+Now that the 11ty project bones are in place, it's time to implement the `terrabyte-11ty-starter` (boilerplate) and the `terrabyte-11ty-template` (this template). The two can be distinguished by thinking of the boilerplate as a launch point, and the template as shared UI/Component pieces. There may be some shared elements between the two as the file is required no matter if the template is implemented or not.
 
 ### 1. Implement Boilerplate
 
-The starter repo is perfect for dropping in the files and components used to build a Terrabyte website. Fetching this content can either be done by simply copy/pasting the repo content, or by creating a subtree. For more information on this starter package, you can view the `terrabyte-11ty-starter` repo on GitHub.
+The starter repo is perfect for dropping in the files and components used to build a Terrabyte website. Fetching this content can either be done by simply copy/pasting the repo content, or by creating a subtree. For more information on this starter package, you can view the `terrabyte-11ty-starter` repo on [GitHub](https://github.com/terrabyte-tech/terrabyte-11ty-starter).
 
 ### 2. Create Template Subtree
 
