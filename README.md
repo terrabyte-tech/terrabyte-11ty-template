@@ -82,6 +82,8 @@ git subtree add --prefix=template template-remote main
 
 ### 3. Incorporate Template
 
+**[flag]UPDATE**: This should be moved to the starter project. The template project is meant to be reused.
+
 If you are starting a new project, you can simply copy all of the content from the `/template` folder into the root.
 
 Caveats that _should not_ be copied include:
