@@ -81,5 +81,9 @@ hr{
   color:var(--background);
 	background-color:var(--foreground);
 }
-
+/* highlight via URL */
+::target-text{
+    background-color:rgba(10, 140, 97);
+    background-color:var(--accent);
+}
 /* +++++++++++++++++++++++++++++++++++++++++++ */
