@@ -2,25 +2,20 @@ window.addEventListener("load", function(){
 
   console.log(`[${window.siteData.project}] global-tb-scripts.js loaded`);
 
-  // could revisit this and create within 11ty??
+  // RECOMMENDED & UPDATED solution:
+  // Utilize the 11ty Starter "currentYear" shortcode by including two "{" and currentYear inside.
 
+  // LEGACY solution:
+  // Replace the innerHTML on "current-year-text" with the current year
   // change copyright date
-  var currentDate = new Date();
-  var currentYear = currentDate.getFullYear();
-  
-  var copyrightSpan = document.getElementById("current-year-text");
-  // for older implementations
-  var oldCopyrightSpan = document.getElementsByClassName("copyright-date")[0];
+  const currentYear = new Date().getFullYear();
 
-  if(copyrightSpan){
-    copyrightSpan.appendChild(document.createTextNode(currentYear));
-  }
-  // for older implementations
-  else if(oldCopyrightSpan){
-    oldCopyrightSpan.appendChild(document.createTextNode(currentYear));
-  }
-  else{
-    // element doesn't exist
-  }
+  // Try modern element first, fallback to legacy
+  const target =
+    document.getElementById("current-year-text") ||
+    document.querySelector(".copyright-date");
 
+  if (target) {
+    target.textContent = currentYear;
+  }
 }, false);

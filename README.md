@@ -82,13 +82,9 @@ git subtree add --prefix=template template-remote main
 
 ### 3. Incorporate Template
 
-**[flag]UPDATE**: This should be moved to the starter project. The template project is meant to be reused.
-
-If you are starting a new project, you can simply copy all of the content from the `/template` folder into the root.
-
 Caveats that _should not_ be copied include:
 
-- `.git`: This is THIS project's git history - you'll make your own in your new project.
+- `.git`: That is _THIS_ project's git history - you'll make your own in your new project.
 - `.github/workflows/notify-downstream.yml`: This is automation for triggering the update process for projects that use this template. So, let's not create a blackhole by looping through automations that trigger themselves...
 - `_site`: This is the web-ready content rendered by the 11ty build process. It will be rendered in your new project as well.
 - `node_modules`: This is a folder containing node-specific files. These won't be committed in GitHub nor should they be copied from project to project (use npm for this).
@@ -155,3 +151,4 @@ As the template changes, so does the documented version. In order to manage what
 - v1.2.x: Added downstream automation, component utilization, implementation documentation
 - v1.3.x: Added global styles, pixel styles, and Canapi styles
 - v1.4.x: Split repo into Template and Starter (boilerplate)
+- ___ : Clean up how copyright date populates
