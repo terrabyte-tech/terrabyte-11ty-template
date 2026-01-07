@@ -28,7 +28,7 @@
 
   <meta name="description" content="{% if subdescription %}{{ subdescription }}{% else %}{{ site.description }}{% endif %}">
   <meta name="author" content="{{ site.author }}">
-  <meta name="keywords" content="{{ keywords }}">
+  <meta name="keywords" content="{% if site.keywords %}: {{ site.keywords }}, {% endif %}{{ keywords }}">
 
   {# if applicable/desired (default: TB green) #}
   <meta name="theme-color" content="{{ site.accentColor | default('#0A8C61') }}">
