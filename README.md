@@ -4,7 +4,7 @@ The purpose of this project is to standardize the Terrabyte website development 
 
 Below, you will find a set of instructions for getting started with 11ty, as well as how to best utilize this template in Terrabyte projects (downstream projects).
 
-**NOTE:** Creating a website with 11ty requires Node.js and npm on your machine.
+**NOTE:** Creating a website with 11ty requires Node.js and npm/pnpm on your machine.
 
 ## Table of Contents
 
@@ -32,10 +32,22 @@ Within the repo's root folder, run the following commands to create a new Node.j
 npm init -y
 ```
 
+(for pnpm)
+
+```
+pnpm init
+```
+
 ...and install 11ty as a dependency.
 
 ```
 npm install -D @11ty/eleventy
+```
+
+(for pnpm)
+
+```
+pnpm install -D @11ty/eleventy
 ```
 
 ### 3. (Optional) package.json
@@ -59,7 +71,7 @@ npm run build
 
 ## Project Content
 
-Now that the 11ty project bones are in place, it's time to implement the `terrabyte-11ty-starter` (boilerplate) and the `terrabyte-11ty-template` (this template). The two can be distinguished by thinking of the boilerplate as a launch point, and the template as shared UI/Component pieces. There may be some shared elements between the two as the file is required no matter if the template is implemented or not.
+Now that the 11ty project bones are in place, it's time to implement the `terrabyte-11ty-starter` (boilerplate) and the `terrabyte-11ty-template` (this template). The two can be distinguished by thinking of the boilerplate as a launch point, and the template as shared UI/web component pieces. There may be some shared elements between the two as the file is required no matter if the template is implemented or not.
 
 ### 1. Implement Boilerplate
 
