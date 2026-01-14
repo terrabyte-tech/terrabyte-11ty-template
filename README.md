@@ -1,5 +1,7 @@
 # Terrabyte 11ty Template
 
+**THIS PROJECT HAS BEEN DEPRECATED. The design system is now supported through a local Node package ([Terrabyte Web UI](https://github.com/terrabyte-tech/terrabyte-web-ui))**. This Package is easier to check out and keep in sync. For questions and installation instructions, please see the linked repo.
+
 The purpose of this project is to standardize the Terrabyte website development and maintenance workflow. [11ty](https://www.11ty.dev/) is a static-site generator that makes the website build process more efficient by leveraging components, site data variables, and other web dev tools. For more information on using 11ty, please read [their documentation](https://www.11ty.dev/docs/).
 
 Below, you will find a set of instructions for getting started with 11ty, as well as how to best utilize this template in Terrabyte projects (downstream projects).
